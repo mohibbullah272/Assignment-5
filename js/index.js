@@ -6,7 +6,10 @@ function showSectionById(id){
     document.getElementById('card-section').classList.add('hidden')
     document.getElementById(id).classList.remove('hidden')
 }
-
+function showModal(){
+    const getModal= document.getElementById('my_modal_4')
+    getModal.showModal()
+  }
 
 
 document.getElementById('nav-donation-btn').addEventListener('click', function(){
@@ -32,12 +35,15 @@ document.getElementById('donate-btn').addEventListener('click', function(){
 const mainBalance =parseFloat(document.getElementById('main-balance').innerText);
 const inputValue =Number(document.getElementById('input-value').value);
 const cardBalance =parseFloat(document.getElementById('card-balance').innerText);
-if(isNaN(inputValue) === true || inputValue > mainBalance || inputValue <=0){
-    return alert('something went wrong, try again later')
+if(isNaN(inputValue) === true || inputValue <= 0){
+    return alert('Invalid input')
+}
+if(inputValue > mainBalance ){
+    return alert('insufficient balance, add money first')
 }
 document.getElementById('main-balance').innerText = mainBalance - inputValue
 document.getElementById('card-balance').innerText=cardBalance + inputValue;
-document.getElementById('my_modal_4').showModal();
+showModal();
 // history section
 const date =new Date()
 const historyContainer =document.getElementById('history-container')
@@ -61,12 +67,15 @@ document.getElementById('donate-btn2').addEventListener('click', function(){
     const mainBalance =parseFloat(document.getElementById('main-balance').innerText);
     const inputValue2 =Number(document.getElementById('input-value2').value);
     const cardBalance2 =parseFloat(document.getElementById('card-balance2').innerText);
-    if(isNaN(inputValue2) === true || inputValue2 > mainBalance || inputValue2 <=0){
-        return alert('something went wrong, try again later')
+    if(isNaN(inputValue2) === true || inputValue2 <= 0){
+        return alert('Invalid input')
+    }
+    if(inputValue2 > mainBalance ){
+        return alert('insufficient balance, add money first')
     }
     document.getElementById('main-balance').innerText = mainBalance - inputValue2
     document.getElementById('card-balance2').innerText=cardBalance2 + inputValue2;
-    document.getElementById('my_modal_4').showModal();
+    showModal();
     // history section
     const date =new Date()
 const historyContainer =document.getElementById('history-container')
@@ -91,12 +100,15 @@ document.getElementById('donate-btn3').addEventListener('click', function(){
     const mainBalance =parseFloat(document.getElementById('main-balance').innerText);
     const inputValue3 =Number(document.getElementById('input-value3').value);
     const cardBalance3 =parseFloat(document.getElementById('card-balance3').innerText);
-    if(isNaN(inputValue3)!==false || inputValue3 > mainBalance || inputValue3 <=0){
-        return alert('something went wrong, try again later')
+    if(isNaN(inputValue3) === true || inputValue3 <= 0){
+        return alert('Invalid input')
+    }
+    if(inputValue3 > mainBalance ){
+        return alert('insufficient balance, add money first')
     }
     document.getElementById('main-balance').innerText = mainBalance - inputValue3
     document.getElementById('card-balance3').innerText=cardBalance3 + inputValue3;
-    document.getElementById('my_modal_4').showModal();
+   showModal()
     // history section
     const date =new Date()
     const historyContainer =document.getElementById('history-container')
@@ -116,6 +128,7 @@ document.getElementById('donate-btn3').addEventListener('click', function(){
     historyContainer.appendChild(div)
     })
     
+
 
 document.getElementById('blog-btn').addEventListener('click', function(){
     window.location.href='./blog.html'
