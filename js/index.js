@@ -30,9 +30,9 @@ document.getElementById('nav-history-btn').addEventListener('click', function(){
 document.getElementById('donate-btn').addEventListener('click', function(){
 
 const mainBalance =parseFloat(document.getElementById('main-balance').innerText);
-const inputValue =parseFloat(document.getElementById('input-value').value);
+const inputValue =Number(document.getElementById('input-value').value);
 const cardBalance =parseFloat(document.getElementById('card-balance').innerText);
-if(isNaN(inputValue)=== true || inputValue > mainBalance || inputValue <=0){
+if(isNaN(inputValue) === true || inputValue > mainBalance || inputValue <=0){
     return alert('something went wrong, try again later')
 }
 document.getElementById('main-balance').innerText = mainBalance - inputValue
@@ -59,9 +59,9 @@ historyContainer.appendChild(div)
 
 document.getElementById('donate-btn2').addEventListener('click', function(){
     const mainBalance =parseFloat(document.getElementById('main-balance').innerText);
-    const inputValue2 =parseFloat(document.getElementById('input-value2').value);
+    const inputValue2 =Number(document.getElementById('input-value2').value);
     const cardBalance2 =parseFloat(document.getElementById('card-balance2').innerText);
-    if(isNaN(inputValue2)=== true || inputValue2 > mainBalance || inputValue2 <=0){
+    if(isNaN(inputValue2) === true || inputValue2 > mainBalance || inputValue2 <=0){
         return alert('something went wrong, try again later')
     }
     document.getElementById('main-balance').innerText = mainBalance - inputValue2
@@ -89,9 +89,9 @@ historyContainer.appendChild(div)
 document.getElementById('donate-btn3').addEventListener('click', function(){
 
     const mainBalance =parseFloat(document.getElementById('main-balance').innerText);
-    const inputValue3 =parseFloat(document.getElementById('input-value3').value);
+    const inputValue3 =Number(document.getElementById('input-value3').value);
     const cardBalance3 =parseFloat(document.getElementById('card-balance3').innerText);
-    if(isNaN(inputValue3)=== true || inputValue3 > mainBalance || inputValue3 <=0){
+    if(isNaN(inputValue3)!==false || inputValue3 > mainBalance || inputValue3 <=0){
         return alert('something went wrong, try again later')
     }
     document.getElementById('main-balance').innerText = mainBalance - inputValue3
